@@ -12,7 +12,7 @@
     select { padding:10px; border-radius:8px; }
     .container { padding: 15px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
     .card { background: white; border-radius: 14px; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
-    video, img { width: 100%; border-radius: 10px; }
+    video, img { width: 100%; border-radius: 10px; background-color: #000; } /* Fondo negro para videos mientras cargan */
     .btn { display: inline-block; margin-top: 8px; padding: 8px 12px; background: #ff441f; color: white; text-decoration: none; border-radius: 8px; font-size: 14px; }
     .hidden { display:none; }
   </style>
@@ -37,61 +37,5 @@
 
   <div class="card" data-title="tienda cerrada cancelaciones" data-cat="cancelaciones">
     <h3>Tienda Cerrada</h3>
-    <img src="imagenes/tienda-cerrada.jpeg">
-    <a class="btn" href="imagenes/tienda-cerrada.jpeg" download>Descargar</a>
-  </div>
-
-  <div class="card" data-title="pago oxxo pagos" data-cat="pagos">
-    <h3>Pago en Oxxo</h3>
-    <video controls>
-      <source src="videos/pago-oxxo.mp4" type="video/mp4">
-    </video>
-    <a class="btn" href="videos/pago-oxxo.mp4" download>Descargar</a>
-  </div>
-
-  <div class="card" data-title="entrega segura entregas" data-cat="entregas">
-    <h3>Entrega Segura</h3>
-    <video controls>
-      <source src="videos/entrega-segura.mp4" type="video/mp4">
-    </video>
-    <a class="btn" href="videos/entrega-segura.mp4" download>Descargar</a>
-  </div>
-
-  <div class="card" data-title="finalizar orden entregas" data-cat="entregas">
-    <h3>Finalizar Orden</h3>
-    <video controls>
-      <source src="videos/finalizar-orden.mp4" type="video/mp4">
-    </video>
-    <a class="btn" href="videos/finalizar-orden.mp4" download>Descargar</a>
-  </div>
-
-</div>
-
-<script>
-  const search = document.getElementById('search');
-  const filter = document.getElementById('filter');
-  const cards = document.querySelectorAll('.card');
-
-  function update() {
-    const text = search.value.toLowerCase();
-    const cat = filter.value;
-
-    cards.forEach(card => {
-      const title = card.dataset.title;
-      const matchText = title.includes(text);
-      const matchCat = cat === 'all' || card.dataset.cat === cat;
-
-      if (matchText && matchCat) {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
-    });
-  }
-
-  search.addEventListener('input', update);
-  filter.addEventListener('change', update);
-</script>
-
-</body>
-</html>
+    <img src="imagenes/tienda-cerrada.jpg" alt="Tienda Cerrada">
+    <a class="btn" href="imagenes/tienda-cerrada.jpg" download="tienda-cerrada.jpg">Descargar</a>
